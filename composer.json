@@ -1,8 +1,8 @@
 {
-    "name": "rappasoft/laravel-5-boilerplate",
-    "description": "The Laravel Framework Boilerplate Project.",
-    "keywords": ["framework", "laravel", "boilerplate"],
-    "license": "MIT",
+    "name": "boviq/boviq",
+    "description": "The Learning Management System.",
+    "keywords": ["laravel", "social", "lms"],
+    "license": "GPL-3.0",
     "type": "project",
     "require": {
         "php": ">=5.5.9",
