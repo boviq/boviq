@@ -1,7 +1,28 @@
+@import '_variables';
 @import "variable-overrides";
 @import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import '../../../../node_modules/font-awesome/scss/font-awesome';
+@import '_bootswatch';
 
 /**
  * Frontend Styles Start Here
  */
+.navbar {
+    @include box-shadow(none);
+    border-bottom: 1px solid $gray-lighter;
+    min-height: 44px;
+}
+
+.navbar-brand {
+    height: 44px;
+    padding: 10.5px 15px;
+}
+
+.navbar-nav {
+    > li {
+        > a {
+            padding-bottom: 10.5px;
+            padding-top: 10.5px;
+        }
+    }
+}
