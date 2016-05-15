@@ -17,10 +17,11 @@ class CreateGroupsTable extends Migration
             $table->string('name');
             $tbale->string('slug')->unique();
             $table->text('description')->nullable();
+            $table->string('type')->default('group');
             $table->tinyInteger('status');
             $table->timestamps();
             $table->softDeletes();
-            $table->integer('institute_id')->nullable();
+            $table->integer('organization_id')->nullable();
         });
     }
 

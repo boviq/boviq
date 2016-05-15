@@ -8587,6 +8587,14 @@ input[type="checkbox"],
   padding-bottom: 10.5px;
   padding-top: 10.5px; }
 
+boviq-post {
+  border: 1px solid #ddd;
+  display: block;
+  padding: 20px 20px 20px 100px; }
+  boviq-post .post-title {
+    font-size: 2rem;
+    margin: 0 0 10px; }
+
 body.stop-scrolling {
   height: 100%;
   overflow: hidden; }

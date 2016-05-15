@@ -1,8 +1,9 @@
-@import '_variables';
-@import "variable-overrides";
+@import '../plugin/bootswatch/_variables'; // bootswatch theme variables
+@import "variable-overrides"; // all third party variable overrides
 @import "../../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @import '../../../../node_modules/font-awesome/scss/font-awesome';
-@import '_bootswatch';
+@import '../plugin/bootswatch/_bootswatch';
+@import 'variables'; // app specific variables
 
 /**
  * Frontend Styles Start Here
@@ -26,3 +27,5 @@
         }
     }
 }
+
+@import 'post';

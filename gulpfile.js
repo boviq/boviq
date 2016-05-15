@@ -1,15 +1,25 @@
 var elixir = require('laravel-elixir');
-//require('./elixir-extensions');
 
+require('./elixir-extensions');
+
+/* GULP
+gulp.task('riot', function() {
+    gulp.src('resources/assets/tags/*.tag')
+        .pipe(riot())
+        .pipe(concat('tags.js'))
+        .pipe(gulp.dest('resources/assets/js/frontend'));
+});*/
+
+// ELIXIR
 elixir(function(mix) {
- mix
+mix
      .phpUnit()
      //.compressHtml()
 
-    /**
-     * Copy needed files from /node directories
-     * to /public directory.
-     */
+     /**
+      * Copy needed files from /node directories
+      * to /public directory.
+      */
      .copy(
        'node_modules/font-awesome/fonts',
        'public/build/fonts/font-awesome'
@@ -39,12 +49,31 @@ elixir(function(mix) {
      ], 'public/css/frontend.css')
 
      /**
+      * Compile the riot tags
+      */
+     .riot('resources/assets/tags/*.tag', 'tags.js', 'public/js')
+
+      /**
+       * Combine app scripts before browserify
+       */
+      .combine([
+          'resources/assets/js/frontend/app.js',
+          'public/js/tags.js'
+      ], 'public/js/app.js')
+
+      /**
+      * Compile and combine es6 code
+      */
+      .browserify([
+          'public/js/app.js'
+      ], 'public/js/app.js', './')
+
+      /**
       * Combine frontend scripts
       */
      .scripts([
         'plugin/sweetalert/sweetalert.min.js',
         'plugins.js',
-        'frontend/app.js'
      ], 'public/js/frontend.js')
 
      /**
@@ -77,5 +106,5 @@ elixir(function(mix) {
     /**
       * Apply version control
       */
-     .version(["public/css/frontend.css", "public/js/frontend.js", "public/css/backend.css", "public/js/backend.js"]);
+     .version(["public/css/frontend.css", "public/js/frontend.js", "public/js/app.js", "public/css/backend.css", "public/js/backend.js"]);
 });

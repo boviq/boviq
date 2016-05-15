@@ -23,6 +23,19 @@ class FrontendController extends Controller
     }
 
     /**
+     * TODO: remove after getting familiar with the boilerplate content
+     * @return \Illuminate\View\View
+     */
+    public function boilerplate()
+    {
+        javascript()->put([
+            'test' => 'it works!',
+        ]);
+
+        return view('frontend.boilerplate');
+    }
+
+    /**
      * @return \Illuminate\View\View
      */
     public function macros()

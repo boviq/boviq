@@ -19,7 +19,7 @@
         @yield('after-styles-end')
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
     </head>
     <body id="app-layout">
 
@@ -37,6 +37,7 @@
 
         @yield('before-scripts-end')
         {!! Html::script(elixir('js/frontend.js')) !!}
+        {!! Html::script(elixir('js/app.js')) !!}
         @yield('after-scripts-end')
 
         @include('includes.partials.ga')

@@ -91,7 +91,4 @@ $(function(){
     });
 });
 
-$(function(){
-
-});
 //# sourceMappingURL=frontend.js.map

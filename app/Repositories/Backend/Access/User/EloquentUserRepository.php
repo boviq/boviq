@@ -165,7 +165,7 @@ class EloquentUserRepository implements UserRepositoryContract
     {
         $user = $this->findOrThrowException($id);
         $user->password = bcrypt($input['password']);
-        
+
         if ($user->save())
             return true;
 
