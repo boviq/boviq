@@ -2,14 +2,6 @@ var elixir = require('laravel-elixir');
 
 require('./elixir-extensions');
 
-/* GULP
-gulp.task('riot', function() {
-    gulp.src('resources/assets/tags/*.tag')
-        .pipe(riot())
-        .pipe(concat('tags.js'))
-        .pipe(gulp.dest('resources/assets/js/frontend'));
-});*/
-
 // ELIXIR
 elixir(function(mix) {
 mix
@@ -59,14 +51,14 @@ mix
       .combine([
           'resources/assets/js/frontend/app.js',
           'public/js/tags.js'
-      ], 'public/js/app.js')
+      ], 'public/js/_app.js')
 
       /**
       * Compile and combine es6 code
       */
       .browserify([
-          'public/js/app.js'
-      ], 'public/js/app.js', './')
+          '../../../public/js/_app.js'
+      ], 'public/js/app.js')
 
       /**
       * Combine frontend scripts

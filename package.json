@@ -2,10 +2,13 @@
   "private": true,
   "devDependencies": {
     "babel-polyfill": "^6.8.0",
+    "babel-register": "^6.9.0",
+    "expect": "^1.20.1",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
     "gulp-htmlmin": "^1.3.0",
-    "gulp-riot": "^0.4.9"
+    "gulp-riot": "^0.4.9",
+    "mocha": "^2.4.5"
   },
   "dependencies": {
     "bootstrap-sass": "^3.0.0",
@@ -13,5 +16,9 @@
     "laravel-elixir": "^5.0.0",
     "redux": "^3.5.2",
     "riot": "^2.4.0"
+  },
+  "scripts": {
+    "test": "mocha --compilers js:babel-register --recursive resources/assets/js/frontend/test",
+    "test:watch": "npm test -- --watch"
   }
 }
