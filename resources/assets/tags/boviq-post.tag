@@ -2,7 +2,7 @@
     <div class="post-avatar">
     </div>
 
-    <h3 class="post-title">{title}</h3>
+    <h3 class="post-title">{opts.store.getState().title}</h3>
 
     <div class="post-content">{content}</div>
 

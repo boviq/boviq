@@ -16,9 +16,13 @@ class FrontendController extends Controller
     public function index()
     {
         javascript()->put([
-            'test' => 'it works!',
+            'test' => [
+                'name' => 'Boviq',
+                'year' => 2016,
+            ],
         ]);
 
+        //var_dump(request()->user()); exit;
         return view('frontend.index');
     }
 
