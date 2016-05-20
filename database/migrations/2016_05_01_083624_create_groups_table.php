@@ -15,7 +15,7 @@ class CreateGroupsTable extends Migration
         Schema::create('groups', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $tbale->string('slug')->unique();
+            $table->string('slug')->unique();
             $table->text('description')->nullable();
             $table->string('type')->default('group');
             $table->tinyInteger('status');
