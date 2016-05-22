@@ -29,6 +29,19 @@ class EventServiceProvider extends ServiceProvider
         \App\Events\Frontend\Auth\UserRegistered::class => [
             \App\Listeners\Frontend\Auth\UserRegisteredListener::class,
         ],
+
+        /**
+         * Post events
+         */
+        \App\Events\Frontend\Content\PostCreated::class => [
+            \App\Listeners\Frontend\Content\PostCreatedListener::class,
+        ],
+        \App\Events\Frontend\Content\PostUpdated::class => [
+            \App\Listeners\Frontend\Content\PostUpdatedListener::class,
+        ],
+        \App\Events\Frontend\Content\PostDeleted::class => [
+            \App\Listeners\Frontend\Content\PostDeletedListener::class,
+        ],
     ];
 
     /**
