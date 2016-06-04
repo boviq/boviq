@@ -9,12 +9,14 @@ namespace App\Repositories\Frontend\Content\Post;
 interface PostRepositoryContract
 {
     /**
-     * @param $id
+     * @param $id ID of the post
      * @return mixed
      */
     public function find($id);
 
     /**
-     * @param $id
+     * @param $id ID of the group
+     * @return mixed
      */
+    public function findAllForGroup($id);
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Repositories\Frontend\Content\Post\PostRepositoryContract;
 
 /**
  * Class FrontendController
@@ -11,14 +12,28 @@ use App\Http\Controllers\Controller;
 class FrontendController extends Controller
 {
     /**
+     * @var PostRepositoryContract
+     */
+    protected $posts;
+
+    /**
+     * @param PostRepositoryContract    $posts
+     */
+    public function __construct(PostRepositoryContract $posts)
+    {
+        $this->posts = $posts;
+    }
+
+    /**
      * @return \Illuminate\View\View
      */
     public function index()
     {
+        $posts = $this->posts->findAllForGroup(0);
+
         javascript()->put([
-            'test' => [
-                'name' => 'Boviq',
-                'year' => 2016,
+            '__INITIAL_STATE__' => [
+                'posts' => $posts,
             ],
         ]);
 

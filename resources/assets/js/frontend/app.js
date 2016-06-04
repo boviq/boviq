@@ -6,8 +6,8 @@ var reducer = (state={title: 'Default title'}, action) => {
     return state
 }
 
-var store = createStore(reducer, window.__INITIAL_STATE__)
+var store = createStore(reducer, __INITIAL_STATE__)
 
 jQuery(document).ready(($) => {
-    riot.mount('boviq-post', {store: store})
+    riot.mount('posts-list', {store: store})
 });

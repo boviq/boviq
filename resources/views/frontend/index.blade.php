@@ -9,7 +9,7 @@
 
         <div class="col-md-9">
 
-            <boviq-post></boviq-post>
+            <posts-list></posts-list>
 
         </div><!-- col-md-9 -->
 

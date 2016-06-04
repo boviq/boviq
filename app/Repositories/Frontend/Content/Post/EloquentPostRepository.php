@@ -20,4 +20,12 @@ class EloquentPostRepository implements PostRepositoryContract
     {
         return Post::findOrFail($id);
     }
+
+    /**
+     * @param $id ID of the group
+     * @return mixed
+     */
+    public function findAllForGroup($id){
+        return Post::where('group_id', $id)->get();
+    }
 }
